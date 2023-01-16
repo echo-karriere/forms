@@ -14,6 +14,7 @@ export default function Home() {
   const [leveranse, setLeveranse] = useState(false);
   const [both, setBoth] = useState(false);
   const [stand, setStand] = useState("");
+  const [policy, setPolicy] = useState(false);
   const [success, setSuccess] = useState(false);
 
   const submitHandler = (e) => {
@@ -45,6 +46,7 @@ export default function Home() {
     const Bankett = document.getElementById("Bankett").value;
     const Leveranse = document.getElementById("Leveranse").value;
     const Annet = document.getElementById("Annet").value;
+    const Policy = document.getElementById("Policy").value;
     base("event-ek2023").create(
       {
         Bedrift: Bedrift,
@@ -65,6 +67,7 @@ export default function Home() {
         Bankett: Bankett,
         Leveranse: Leveranse,
         Annet: Annet,
+        Policy: Policy,
       },
       function (err, record) {
         if (err) {
@@ -192,7 +195,7 @@ export default function Home() {
               required
             />
             <label htmlFor="Fakturaperson" className="font-bold">
-              Konatkperson for faktura*
+              Kontaktperson for faktura*
             </label>
             <input
               className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
@@ -213,7 +216,7 @@ export default function Home() {
               required
             />
             <label htmlFor="Fakturainfo" className="font-bold">
-              Annen informasjon til faktura (valgfritt)
+              Annen informasjon til faktura*
             </label>
             <textarea
               className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
@@ -221,7 +224,19 @@ export default function Home() {
               type="text"
               inputMode="text"
               rows="3"
+              required
             />
+            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+              <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
+              <p className="ml-8 -mt-6">
+                Feltet for "annen informasjon til faktura" er obligatorisk å
+                fylle ut. Skal fakturaen merkes med noe spesielt kan dette
+                fylles ut her. Fakturaen har 14 dagers betalingsfrist etter
+                utsendelse. Om dere ønkser å utvide denne opp til 30 dager, må
+                dette skrives her nå. Hvis dere ikke har noen spesielle ønsker,
+                kan dette feltet fylles ut med "Ingen merknader".
+              </p>
+            </div>
             <h2 className="text-xl font-semibold mb-4">
               Del 4 - Valg av grunnpakke
             </h2>
@@ -368,8 +383,8 @@ export default function Home() {
                 ved start slipper vi inn de som ønsker, så lenge det er ledig
                 plass. Dere er selv ansvarlige for å promotere deres
                 presentasjon, men dere vil få mulighet til å benytte dere av
-                våre kanaler dersom dere ønsker. Ta kontakt med vår PR-ansvarlig
-                for å avtale.
+                våre kanaler dersom dere ønsker. Ta kontakt på mail
+                kontakt@echokarriere.no for å avtale.
               </p>
 
               <hr className="my-4" />
@@ -411,7 +426,7 @@ export default function Home() {
                 slipper vi inn de som ønsker, så lenge det er ledig plass. Dere
                 er selv ansvarlige for å promotere deres workshop, men dere vil
                 få mulighet til å benytte dere av våre kanaler dersom dere
-                ønsker. Ta kontakt med vår PR-ansvarlig for å avtale.
+                ønsker. Ta kontakt på mail kontakt@echokarriere.no for å avtale.
               </p>
 
               <hr className="my-4" />
@@ -448,19 +463,19 @@ export default function Home() {
 
                 {!offentlig ? (
                   <p className="ml-8 -mt-6">
-                    Avholdes på Scandic Bergen City fredag 15. september.
-                    Inkluderer ett rundt bord med plass til 10 personer,
-                    3-retters middag, 2 enheter til maten og velkomstdrink.
-                    Prisen er den samme uansett om dere stiller med færre enn 10
-                    personer.
+                    Avholdes på Scandic Bergen City fredag 15. september etter
+                    karrieredagene. Inkluderer ett rundt bord med plass til 10
+                    personer, 3-retters middag, 2 enheter til maten og
+                    velkomstdrink. Prisen er den samme uansett om dere stiller
+                    med færre enn 10 personer.
                   </p>
                 ) : (
                   <p className="ml-8 -mt-6">
-                    Avholdes på Scandic Bergen City fredag 15. september.
-                    Inkluderer ett rundt bord med plass til 10 personer,
-                    3-retters middag, 2 enheter til maten, 2 bonger hver og
-                    velkomstdrink. Prisen er den samme uansett om dere stiller
-                    med færre enn 10 personer.
+                    Avholdes på Scandic Bergen City fredag 15. september etter
+                    karrieredagene. Inkluderer ett rundt bord med plass til 10
+                    personer, 3-retters middag, 2 enheter til maten, 2 bonger
+                    hver og velkomstdrink. Prisen er den samme uansett om dere
+                    stiller med færre enn 10 personer.
                   </p>
                 )}
               </p>
@@ -538,6 +553,50 @@ export default function Home() {
               rows="4"
               className="border border-gray-300 rounded-md p-4 mt-2 mb-6"
             ></textarea>
+            <h2 className="text-xl font-semibold">Del 7 - Vilkår</h2>
+            <hr className="my-4" />
+            <label htmlFor="Policy" className="font-bold">
+              Aksepter vilkår*
+            </label>
+
+            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+              <p>
+                <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
+                <p className="ml-8 -mt-6">
+                  Ettersom det er begrenset antall plasser, vil vi praktisere
+                  bindende påmelding. Dersom betalingsfristen ikke overholdes,
+                  vil deres plass på arrangementet automatisk falle bort. Dersom
+                  dere ikke møter, eller avbestiller etter at påmelding og
+                  betaling har skjedd, vil ikke innbetalt forskudd refunderes.
+                  Det samme gjelder dersom dere ikke overholder obligatoriske
+                  frister for tilbakemelding. Vi er avhengig av at bedriftene
+                  overholder sin del, slik at vi sammen får til et velfungerende
+                  arrangement.
+                </p>
+              </p>
+              <hr className="my-4" />
+              <input
+                type="checkbox"
+                id="Policy"
+                name="Policy"
+                value={policy ? "Ja" : "Nei"}
+                className="h-5 w-5"
+                required
+                onChange={() => {
+                  if (policy) {
+                    setPolicy(false);
+                  } else {
+                    setPolicy(true);
+                  }
+                }}
+              />
+              <label htmlFor="Policy" className="ml-2 text-md -mt-4">
+                Vi bekrefter at vi har lest vilkårene og aksepterer vilkårene
+                for kontrakten.
+              </label>
+            </div>
+
+            <hr className="my-4" />
           </div>
           <p>
             Deres pris:{" "}
@@ -567,8 +626,10 @@ export default function Home() {
                 Fakturamail.value !== "" &&
                 Fakturaperson.value !== "" &&
                 Fakturaadresse.value !== "" &&
+                Fakturainfo.value !== "" &&
                 Dato.value !== "" &&
-                Stand.value !== ""
+                Stand.value !== "" &&
+                policy === true
               )
                 setSuccess(true);
             }}
@@ -580,10 +641,21 @@ export default function Home() {
               className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4 max-w-2xl"
               role="alert"
             >
-              <strong className="font-bold">Takk for påmeldingen!</strong>
+              <strong className="font-bold">
+                Takk for påmeldingen {Kontaktperson.value}!
+              </strong>{" "}
               <span className="block sm:inline">
                 <br /> Vi har mottatt din påmelding og du vil innen kort tid få
-                en bekreftelse på epost.
+                en bekreftelse sendt til eposten {Epost.value}. Om noe er feil i
+                e-posten, eller at du ikke har mottatt den innen 5 minutter, ta
+                kontakt med oss på{" "}
+                <a
+                  href="mailto:kontakt@echokarriere.no
+"
+                  className="text-blue-500"
+                >
+                  kontakt@echokarriere.no
+                </a>
               </span>
             </div>
           )}
