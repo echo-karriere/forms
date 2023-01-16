@@ -650,8 +650,7 @@ export default function Home() {
                 e-posten, eller at du ikke har mottatt den innen 5 minutter, ta
                 kontakt med oss på{" "}
                 <a
-                  href="mailto:kontakt@echokarriere.no
-"
+                  href="mailto:kontakt@echokarriere.no"
                   className="text-blue-500"
                 >
                   kontakt@echokarriere.no
