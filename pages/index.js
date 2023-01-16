@@ -1,0 +1,25 @@
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <div className={styles.container}>
+      <Head>
+        <title>echo karriere skjemaer</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main className={styles.main}>
+        <h1 className={styles.title}>Aktive skjemaer</h1>
+        <br />
+
+        <div className={styles.grid}>
+          <Link href="/karrieredagene2023" className={styles.card}>
+            <h2>Karrieredagene 2023 &rarr;</h2>
+          </Link>
+        </div>
+      </main>
+    </div>
+  );
+}
