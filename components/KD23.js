@@ -231,7 +231,7 @@ export default function Home() {
               <p className="ml-8 -mt-6">
                 Feltet for "annen informasjon til faktura" er obligatorisk å
                 fylle ut. Skal fakturaen merkes med noe spesielt skal dette
-                fylles ut her. Faktura forfaller 30 dager etter utsendele, ta
+                fylles ut her. Faktura forfaller 30 dager etter utsendelse, ta
                 kontakt med økonomiansvarlig om det skulle være et problem. Hvis
                 dere ikke har noen spesielle ønsker, kan dette feltet fylles ut
                 med "Ingen merknader".
