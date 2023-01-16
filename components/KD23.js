@@ -230,11 +230,11 @@ export default function Home() {
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
               <p className="ml-8 -mt-6">
                 Feltet for "annen informasjon til faktura" er obligatorisk å
-                fylle ut. Skal fakturaen merkes med noe spesielt kan dette
-                fylles ut her. Fakturaen har 14 dagers betalingsfrist etter
-                utsendelse. Om dere ønkser å utvide denne opp til 30 dager, må
-                dette skrives her nå. Hvis dere ikke har noen spesielle ønsker,
-                kan dette feltet fylles ut med "Ingen merknader".
+                fylle ut. Skal fakturaen merkes med noe spesielt skal dette
+                fylles ut her. Faktura forfaller 30 dager etter utsendele, ta
+                kontakt med økonomiansvarlig om det skulle være et problem. Hvis
+                dere ikke har noen spesielle ønsker, kan dette feltet fylles ut
+                med "Ingen merknader".
               </p>
             </div>
             <h2 className="text-xl font-semibold mb-4">
@@ -572,6 +572,18 @@ export default function Home() {
                   frister for tilbakemelding. Vi er avhengig av at bedriftene
                   overholder sin del, slik at vi sammen får til et velfungerende
                   arrangement.
+                  <br />
+                  <br />
+                  Du bekrefter at du også har lest gjennom vilkårene våre i
+                  <a
+                    href="https://drive.google.com/file/d/1ykdxJ8wLW5D2RtgsJPLyKACXitMta4lH/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500"
+                  >
+                    {" "}
+                    invitasjonen
+                  </a>
                 </p>
               </p>
               <hr className="my-4" />
