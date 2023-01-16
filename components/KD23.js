@@ -576,7 +576,7 @@ export default function Home() {
                   <br />
                   Du bekrefter at du også har lest gjennom vilkårene våre i
                   <a
-                    href="https://drive.google.com/file/d/1ykdxJ8wLW5D2RtgsJPLyKACXitMta4lH/view?usp=sharing"
+                    href="https://www.echokarriere.no/files/invitation.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-500"
