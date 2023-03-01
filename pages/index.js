@@ -8,6 +8,7 @@ export default function Home() {
       <Head>
         <title>echo karriere skjemaer</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#66023C" />
       </Head>
 
       <main className={styles.main}>

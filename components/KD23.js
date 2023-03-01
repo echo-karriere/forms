@@ -85,14 +85,13 @@ export default function Home() {
       <>
         <div className="mx-auto w-11/12 max-w-6xl my-4">
           <h1 className="text-2xl font-semibold mt-3">
-            Påmelding til echo karriere sine karrieredager 2023
+            Påmelding til karrieredagene for IT Studente i Bergen
           </h1>
         </div>
         <form
           className="mx-auto w-11/12 max-w-6xl my-8"
           ref={formRef}
-          onSubmit={submitHandler}
-        >
+          onSubmit={submitHandler}>
           <h2 className="text-xl font-semibold mb-4">
             Del 1 - Bedriftsinformasjon
           </h2>
@@ -102,7 +101,7 @@ export default function Home() {
               Bedrift*
             </label>
             <input
-              className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
+              className="border py-2 px-4 mb-5 mt-2 max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
               id="Bedrift"
               type="text"
               required
@@ -111,7 +110,7 @@ export default function Home() {
               Organisasjonsnummer*
             </label>
             <input
-              className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
+              className="border py-2 px-4 mb-5 mt-2  max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200  focus:border-b-2"
               id="Organisasjonsnummer"
               type="text"
               inputMode="numeric"
@@ -121,7 +120,7 @@ export default function Home() {
               Er bedriften offentlig?*
             </label>
 
-            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+            <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
               <p className="ml-8 -mt-6">
                 Vi har ulike priser for offentlige og private bedrifter. Om
@@ -132,7 +131,7 @@ export default function Home() {
 
               <hr className="my-4" />
               <select
-                className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
+                className="border py-2 px-4 mb-5 mt-2  max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
                 id="Offentlig"
                 onChange={(e) => {
                   if (e.target.value == "Ja") {
@@ -140,8 +139,7 @@ export default function Home() {
                   } else {
                     setOffentlig(false);
                   }
-                }}
-              >
+                }}>
                 <option value="Nei">Nei</option>
                 <option value="Ja">Ja</option>
               </select>
@@ -155,7 +153,7 @@ export default function Home() {
               Navn på kontaktperson*
             </label>
             <input
-              className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
+              className="border py-2 px-4 mb-5 mt-2  max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
               id="Kontaktperson"
               type="text"
               required
@@ -164,7 +162,7 @@ export default function Home() {
               Telefonnummer til kontaktperson*
             </label>
             <input
-              className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
+              className="border py-2 px-4 mb-5 mt-2  max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
               id="Telefonnummer"
               type="tel"
               inputMode="tel"
@@ -174,7 +172,7 @@ export default function Home() {
               E-post til kontaktperson*
             </label>
             <input
-              className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
+              className="border py-2 px-4 mb-5 mt-2  max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
               id="Epost"
               type="email"
               inputMode="email"
@@ -188,7 +186,7 @@ export default function Home() {
               E-post for faktura/EHF referanse*
             </label>
             <input
-              className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
+              className="border py-2 px-4 mb-5 mt-2  max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
               id="Fakturamail"
               type="text"
               inputMode="text"
@@ -198,7 +196,7 @@ export default function Home() {
               Kontaktperson for faktura*
             </label>
             <input
-              className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
+              className="border py-2 px-4 mb-5 mt-2  max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
               id="Fakturaperson"
               type="text"
               inputMode="text"
@@ -208,7 +206,7 @@ export default function Home() {
               Fakturaadresse*
             </label>
             <textarea
-              className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
+              className="border py-2 px-4 mb-5 mt-2  max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
               id="Fakturaadresse"
               type="text"
               inputMode="text"
@@ -219,14 +217,14 @@ export default function Home() {
               Annen informasjon til faktura*
             </label>
             <textarea
-              className="border-2 py-2 px-4 mb-5 mt-2 rounded max-w-2xl"
+              className="border py-2 px-4 mb-5 mt-2  max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
               id="Fakturainfo"
               type="text"
               inputMode="text"
               rows="3"
               required
             />
-            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+            <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
               <p className="ml-8 -mt-6">
                 Feltet for "annen informasjon til faktura" er obligatorisk å
@@ -244,7 +242,7 @@ export default function Home() {
             <label htmlFor="Dato" className="font-bold">
               Dato for deltakelse*
             </label>
-            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+            <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
               <p className="ml-8 -mt-6">
                 Karrieredagene for 2023 skal arrangeres 14. og 15. september
@@ -254,7 +252,7 @@ export default function Home() {
 
               <hr className="my-4" />
               <select
-                className="border-2 py-2 px-4 mb-5 mt-2 rounded w-full"
+                className="border py-2 px-4 mb-5 mt-2  w-full focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
                 id="Dato"
                 required
                 onChange={(e) => {
@@ -265,8 +263,7 @@ export default function Home() {
                   } else {
                     setBoth(false);
                   }
-                }}
-              >
+                }}>
                 <option value="" disabled selected hidden>
                   Velg en dato
                 </option>
@@ -278,7 +275,7 @@ export default function Home() {
             <label htmlFor="Stand" className="font-bold">
               Velg standtype*
             </label>
-            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+            <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
               <p className="ml-8 -mt-6">
                 Vi tilbyr to typer stander, en stor med målene 5m x 3m og en
@@ -288,7 +285,7 @@ export default function Home() {
 
               <hr className="my-4" />
               <select
-                className="border-2 py-2 px-4 mb-5 mt-2 rounded w-full"
+                className="border py-2 px-4 mb-5 mt-2  w-full focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
                 id="Stand"
                 required
                 value={stand}
@@ -316,8 +313,7 @@ export default function Home() {
                       setStandprice(10000);
                     }
                   }
-                }}
-              >
+                }}>
                 <option value="" disabled selected hidden>
                   Velg en standtype
                 </option>
@@ -333,7 +329,7 @@ export default function Home() {
             <label htmlFor="Lynpresentasjon" className="font-bold">
               Lynpresentasjon (Gratis)
             </label>
-            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+            <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
               <p className="ml-8 -mt-6">
                 3 minutters kort introduksjon av bedriften for å informere
@@ -355,7 +351,7 @@ export default function Home() {
                 id="Lynpresentasjon"
                 name="Lynpresentasjon"
                 value={lynpresentasjon ? "Ja" : "Nei"}
-                className="h-5 w-5"
+                className="h-5 w-5 accent-[#66023C]"
                 onChange={(e) => {
                   if (e.target.checked) {
                     setLynpresentasjon(true);
@@ -371,7 +367,7 @@ export default function Home() {
             <label htmlFor="Konseptpresentasjon" className="font-bold">
               Konseptpresentasjon (+ 2 000 NOK)
             </label>
-            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+            <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
               <p className="ml-8 -mt-6">
                 20 minutters presentasjon av bedriften eller et tema som er
@@ -394,7 +390,7 @@ export default function Home() {
                 name="Konseptpresentasjon"
                 // value send Ja if checked, otherwise send Nei
                 value={konseptpresentasjon ? "Ja" : "Nei"}
-                className="h-5 w-5"
+                className="h-5 w-5 accent-[#66023C]"
                 onChange={() => {
                   if (konseptpresentasjon) {
                     setKonseptpresentasjon(false);
@@ -407,15 +403,14 @@ export default function Home() {
               />
               <label
                 htmlFor="Konseptpresentasjon"
-                className="ml-2 text-md -mt-4"
-              >
+                className="ml-2 text-md -mt-4">
                 Legg til konseptpresentasjon
               </label>
             </div>
             <label htmlFor="Workshop" className="font-bold">
               Workshop (+ 4 000 NOK)
             </label>
-            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+            <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
               <p className="ml-8 -mt-6">
                 60 minutter workshop med studenter. Det vil være enkel snacks og
@@ -435,7 +430,7 @@ export default function Home() {
                 id="Workshop"
                 name="Workshop"
                 value={workshop ? "Ja" : "Nei"}
-                className="h-5 w-5"
+                className="h-5 w-5 accent-[#66023C]"
                 onChange={() => {
                   if (workshop) {
                     setWorkshop(false);
@@ -457,7 +452,7 @@ export default function Home() {
                 <p>Bankett (+14 500 NOK)</p>
               )}
             </label>
-            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+            <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <p>
                 <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
 
@@ -485,7 +480,7 @@ export default function Home() {
                 id="Bankett"
                 name="Bankett"
                 value={bankett ? "Ja" : "Nei"}
-                className="h-5 w-5"
+                className="h-5 w-5 accent-[#66023C]"
                 onChange={() => {
                   if (offentlig) {
                     if (bankett) {
@@ -513,7 +508,7 @@ export default function Home() {
             <label htmlFor="Leveranse" className="font-bold">
               Leveranse av stand
             </label>
-            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+            <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <p>
                 <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
                 <p className="ml-8 -mt-6">
@@ -529,7 +524,7 @@ export default function Home() {
                 id="Leveranse"
                 name="Leveranse"
                 value={leveranse ? "Ja" : "Nei"}
-                className="h-5 w-5"
+                className="h-5 w-5 accent-[#66023C]"
                 onChange={() => {
                   if (leveranse) {
                     setLeveranse(false);
@@ -551,15 +546,14 @@ export default function Home() {
               id="Annet"
               name="Annet"
               rows="4"
-              className="border border-gray-300 rounded-md p-4 mt-2 mb-6"
-            ></textarea>
+              className="border border-gray-300 -md p-4 mt-2 mb-6 focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"></textarea>
             <h2 className="text-xl font-semibold">Del 7 - Vilkår</h2>
             <hr className="my-4" />
             <label htmlFor="Policy" className="font-bold">
               Aksepter vilkår*
             </label>
 
-            <div className="border border-gray-300 rounded-md p-4 -pb-2 mt-2 mb-6">
+            <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <p>
                 <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
                 <p className="ml-8 -mt-6">
@@ -576,11 +570,10 @@ export default function Home() {
                   <br />
                   Du bekrefter at du også har lest gjennom vilkårene våre i
                   <a
-                    href="https://www.echokarriere.no/files/invitation.pdf"
+                    href="https://old.echokarriere.no/files/invitation.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500"
-                  >
+                    className="text-blue-500">
                     {" "}
                     invitasjonen
                   </a>
@@ -592,7 +585,7 @@ export default function Home() {
                 id="Policy"
                 name="Policy"
                 value={policy ? "Ja" : "Nei"}
-                className="h-5 w-5"
+                className="h-5 w-5 accent-[#66023C]"
                 required
                 onChange={() => {
                   if (policy) {
@@ -625,7 +618,7 @@ export default function Home() {
           <br /> <br />
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4"
             // Show an success message on form submition
             onClick={() => {
               if (
@@ -644,15 +637,13 @@ export default function Home() {
                 policy === true
               )
                 setSuccess(true);
-            }}
-          >
+            }}>
             Send påmeldingsskjemaet
           </button>
           {success && (
             <div
-              className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4 max-w-2xl"
-              role="alert"
-            >
+              className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 relative mt-4 max-w-2xl"
+              role="alert">
               <strong className="font-bold">
                 Takk for påmeldingen {Kontaktperson.value}!
               </strong>{" "}
@@ -663,8 +654,7 @@ export default function Home() {
                 kontakt med oss på{" "}
                 <a
                   href="mailto:kontakt@echokarriere.no"
-                  className="text-blue-500"
-                >
+                  className="text-blue-500">
                   kontakt@echokarriere.no
                 </a>
               </span>
