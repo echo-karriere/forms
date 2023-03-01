@@ -85,7 +85,7 @@ export default function Home() {
       <>
         <div className="mx-auto w-11/12 max-w-6xl my-4">
           <h1 className="text-2xl font-semibold mt-3">
-            Påmelding til karrieredagene for IT Studente i Bergen
+            Påmelding til karrieredagene for IT studenter i Bergen
           </h1>
         </div>
         <form
