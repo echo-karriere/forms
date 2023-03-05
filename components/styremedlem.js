@@ -47,6 +47,15 @@ export default function Home() {
           <h1 className="text-2xl font-semibold mt-3">
             Søknad som styremedlem til ITxBERGEN
           </h1>
+          <br />
+          <p>
+            Vi ser etter engasjerte studenter som vil bidra til å videreutvikle
+            ITxBERGEN og lage en spennende, engasjerende og interessant
+            karrieredag for IT-studenter i Bergen og omegn. Er du en person som
+            ikke er redd for å ta i et tak, lyst til å skape noe givende og
+            ønsker å jobbe med og for studenter passer et verv hos oss perfekt
+            for deg.
+          </p>
         </div>
         <form
           className="w-11/12 max-w-6xl my-8"
