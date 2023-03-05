@@ -19,6 +19,9 @@ export default function Home() {
           <Link href="/karrieredagene2023" className={styles.card}>
             <h2>Karrieredagene 2023 &rarr;</h2>
           </Link>
+          <Link href="/bli-styremedlem" className={styles.card}>
+            <h2>Bli styremedlem &rarr;</h2>
+          </Link>
         </div>
       </main>
     </div>
