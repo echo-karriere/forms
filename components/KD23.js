@@ -641,23 +641,66 @@ export default function Home() {
             Send påmeldingsskjemaet
           </button>
           {success && (
-            <div
-              className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 relative mt-4 max-w-2xl"
-              role="alert">
-              <strong className="font-bold">
-                Takk for påmeldingen {Kontaktperson.value}!
-              </strong>{" "}
-              <span className="block sm:inline">
-                <br /> Vi har mottatt din påmelding og du vil innen kort tid få
-                en bekreftelse sendt til eposten {Epost.value}. Om noe er feil i
-                e-posten, eller at du ikke har mottatt den innen 5 minutter, ta
-                kontakt med oss på{" "}
+            // <div
+            //   className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 relative mt-4 max-w-2xl"
+            //   role="alert">
+            //   <strong className="font-bold">
+            //     Takk for påmeldingen {Kontaktperson.value}!
+            //   </strong>{" "}
+            //   <span className="block sm:inline">
+            //     <br /> Vi har mottatt din påmelding og du vil innen kort tid få
+            //     en bekreftelse sendt til eposten {Epost.value}. Om noe er feil i
+            //     e-posten, eller at du ikke har mottatt den innen 5 minutter, ta
+            //     kontakt med oss på{" "}
+            //     <a
+            //       href="mailto:kontakt@itxbergen.no"
+            //       className="text-blue-500">
+            //       kontakt@itxbergen.no
+            //     </a>
+            //   </span>
+            // </div>
+
+            <div className="fixed top-0 left-0 w-full h-full bg-black flex items-center justify-center">
+              <div className="bg-white p-8 rounded shadow-2xl">
+                <h2 className="text-2xl font-semibold mb-4">
+                  Takk for påmeldingen!
+                </h2>
+                <p>
+                  Vi har mottatt din påmelding og du vil innen kort tid få en
+                  bekreftelse sendt til eposten du oppga .<br /> Om noe er feil
+                  i e-posten, eller at du ikke har mottatt den innen 5 minutter,
+                  ta kontakt med oss på{" "}
+                  <a
+                    href="mailto:kontakt@itxbergen.no"
+                    className="text-blue-500">
+                    kontakt@itxbergen.no
+                  </a>
+                </p>
+                <br />
+                <p>
+                  <b>Andre ting vi tror du vil sjekke ut:</b>
+                </p>
+                <br />
                 <a
-                  href="mailto:kontakt@itxbergen.no"
-                  className="text-blue-500">
-                  kontakt@itxbergen.no
+                  className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4"
+                  href="https://ixb.no/">
+                  Gå til hjemmesiden vår
                 </a>
-              </span>
+                <br />
+                <br />
+                <a
+                  className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4"
+                  href="https://www.linkedin.com/company/itxbergen">
+                  Følg oss på LinkedIn
+                </a>
+                <br />
+                <br />
+                <a
+                  className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4"
+                  href="https://airtable.com/shrEXkOYcPiAG7cDP">
+                  Publiser stillingsannonse
+                </a>
+              </div>
             </div>
           )}
         </form>
