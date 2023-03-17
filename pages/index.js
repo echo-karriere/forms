@@ -22,6 +22,9 @@ export default function Home() {
           <Link href="/bli-styremedlem" className={styles.card}>
             <h2>Bli styremedlem &rarr;</h2>
           </Link>
+          <Link href="/ixb-whistleblower" className={styles.card}>
+            <h2>IxB Whistleblower &rarr;</h2>
+          </Link>
         </div>
       </main>
     </div>
