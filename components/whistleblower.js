@@ -69,7 +69,7 @@ export default function Home() {
             vil få tilgang til svaret fra oss uten den. Vi anbefaler deg å ta
             vare på referansekoden, for eksempel ved å ta et skjembilde av den,
             eller ved å skrive den ned på et papir eller i notatene dine. Etter
-            du har sendt inn varslet ditt vil du ikke få tilgang til
+            du har sendt inn varslet vil du ikke få se referansekoden din igjen.
           </p>
           <br />
           <input
