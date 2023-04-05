@@ -109,13 +109,16 @@ export default function Home() {
             <label htmlFor="Organisasjonsnummer" className="font-bold">
               Organisasjonsnummer*
             </label>
+            <p>Skriv organisasjonsnummeret uten mellomrom</p>
             <input
               className="border py-2 px-4 mb-5 mt-2  max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200  focus:border-b-2"
               id="Organisasjonsnummer"
               type="text"
               inputMode="numeric"
+              pattern="[0-9]{9}"
               required
             />
+
             <label htmlFor="Offentlig" className="font-bold">
               Er bedriften offentlig?*
             </label>
