@@ -409,14 +409,16 @@ export default function Home() {
               <p>
                 <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
                 <p className="ml-8 -mt-6">
-                  Banketten vil avholdes den 19. september kl. 19:00 et sted i Bergen
-                  Sentrum. Pakken inneholder ett rundt bord med 10 plasser,
-                  inkl. 3-retters middag, 4 enheter hver og velkomstdrink.
+                  Banketten vil avholdes den 19. september kl. 19:00 et sted i
+                  Bergen Sentrum. Pakken inneholder ett rundt bord med 10
+                  plasser, der dere selv inviterer studenter fra karrieredagen.
+                  Inkl. 3-retters middag, 4 enheter hver og velkomstdrink.
                   Veiledende pris for denne pakken vil ligge mellom 16 000 NOK
                   og 20 000 NOK. Dette vil bli fakturert i tilegg til beløpet
                   som er oppgitt nederst i dette skjemaet. Dette vil være
                   bindende etter vi har mottatt en endelig bekreftelse fra
-                  bedriften at dere ønsker å delta på banketten.
+                  bedriften at dere ønsker å delta på banketten. Per nå er dette
+                  kun for å vise interesse for å delta på bankett.
                 </p>
               </p>
               <hr className="my-4" />
