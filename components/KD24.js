@@ -409,7 +409,7 @@ export default function Home() {
               <p>
                 <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
                 <p className="ml-8 -mt-6">
-                  Banketten vil avholdes den 19. september et sted i Bergen
+                  Banketten vil avholdes den 19. september kl. 19:00 et sted i Bergen
                   Sentrum. Pakken inneholder ett rundt bord med 10 plasser,
                   inkl. 3-retters middag, 4 enheter hver og velkomstdrink.
                   Veiledende pris for denne pakken vil ligge mellom 16 000 NOK
