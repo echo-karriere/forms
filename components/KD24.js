@@ -131,6 +131,16 @@ export default function Home() {
                 påmeldingsvilkårene for å se om bedriften dekker kravene for
                 rabattert pris. Om disse kravene ikke er oppfylt, vil vi
                 fakturere bedriften for fullpris.
+                <br />
+                <br />
+                <a
+                  href="https://itxbergen.no/files/kontrakt.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500">
+                  {" "}
+                  Åpne avtale- og påmeldingsvilkårene i ny fane
+                </a>
               </p>
 
               <hr className="my-4" />
