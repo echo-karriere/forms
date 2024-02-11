@@ -16,15 +16,15 @@ export default function Home() {
         <br />
 
         <div className={styles.grid}>
-          <Link href="/karrieredagene2023" className={styles.card}>
-            <h2>Karrieredagene 2023 &rarr;</h2>
+          <Link href="/karrieredagene2024" className={styles.card}>
+            <h2>Karrieredagene 2024 &rarr;</h2>
           </Link>
-          <Link href="/bli-styremedlem" className={styles.card}>
+          {/* <Link href="/bli-styremedlem" className={styles.card}>
             <h2>Bli styremedlem &rarr;</h2>
           </Link>
           <Link href="/ixb-whistleblower" className={styles.card}>
             <h2>IxB Whistleblower &rarr;</h2>
-          </Link>
+          </Link> */}
         </div>
       </main>
     </div>

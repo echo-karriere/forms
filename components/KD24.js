@@ -7,15 +7,11 @@ export default function Home() {
   const [offentlig, setOffentlig] = useState(false);
   const [price, setPrice] = useState(0);
   const [lynpresentasjon, setLynpresentasjon] = useState(false);
-  const [standprice, setStandprice] = useState(0);
   const [konseptpresentasjon, setKonseptpresentasjon] = useState(false);
   const [workshop, setWorkshop] = useState(false);
   const [bankett, setBankett] = useState(false);
   const [leveranse, setLeveranse] = useState(false);
-  const [both, setBoth] = useState(false);
-  const [stand, setStand] = useState("");
   const [policy, setPolicy] = useState(false);
-  const [success, setSuccess] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -36,8 +32,6 @@ export default function Home() {
     const Fakturaperson = document.getElementById("Fakturaperson").value;
     const Fakturaadresse = document.getElementById("Fakturaadresse").value;
     const Fakturainfo = document.getElementById("Fakturainfo").value;
-    const Dato = document.getElementById("Dato").value;
-    const Stand = document.getElementById("Stand").value;
     const Lynpresentasjon = document.getElementById("Lynpresentasjon").value;
     const Konseptpresentasjon = document.getElementById(
       "Konseptpresentasjon"
@@ -47,7 +41,7 @@ export default function Home() {
     const Leveranse = document.getElementById("Leveranse").value;
     const Annet = document.getElementById("Annet").value;
     const Policy = document.getElementById("Policy").value;
-    base("event-ek2023").create(
+    base("event-ek2024").create(
       {
         Bedrift: Bedrift,
         Organisasjonsnummer: Organisasjonsnummer,
@@ -59,8 +53,6 @@ export default function Home() {
         Fakturaperson: Fakturaperson,
         Fakturaadresse: Fakturaadresse,
         Fakturainfo: Fakturainfo,
-        Dato: Dato,
-        Stand: Stand,
         Lynpresentasjon: Lynpresentasjon,
         Konseptpresentasjon: Konseptpresentasjon,
         Workshop: Workshop,
@@ -76,6 +68,7 @@ export default function Home() {
         }
         console.log(record.getId());
         formRef.current.reset();
+        window.location.href = "https://success.ixb.no";
       }
     );
   };
@@ -100,6 +93,10 @@ export default function Home() {
             <label htmlFor="Bedrift" className="font-bold">
               Bedrift*
             </label>
+            <p>
+              Skriv hvilket navn dere ønsker bedriften skal bli markedsført som
+              for studentene
+            </p>
             <input
               className="border py-2 px-4 mb-5 mt-2 max-w-2xl focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
               id="Bedrift"
@@ -120,16 +117,20 @@ export default function Home() {
             />
 
             <label htmlFor="Offentlig" className="font-bold">
-              Er bedriften offentlig?*
+              Er bedriften statlig eller en startup?*
             </label>
 
             <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
               <p className="ml-8 -mt-6">
-                Vi har ulike priser for offentlige og private bedrifter. Om
-                bedriften er en statlig organisasjon, eller at staten har en
-                100% eierandel, har vi et annet pristilbud. Endre menyen under
-                til Ja om dette er tilfelle for dere.
+                Vi har rabatterte priser for enkelte statlige bedrifter og
+                startup bedrifter i henhold til avtale- og påmeldingsvilkårene.
+                Endre dette feltet til "Ja" for å få rabattert pris.
+                <br /> <br />
+                <b>NB:</b> Les del III.a og III.b i avtale- og
+                påmeldingsvilkårene for å se om bedriften dekker kravene for
+                rabattert pris. Om disse kravene ikke er oppfylt, vil vi
+                fakturere bedriften for fullpris.
               </p>
 
               <hr className="my-4" />
@@ -139,8 +140,10 @@ export default function Home() {
                 onChange={(e) => {
                   if (e.target.value == "Ja") {
                     setOffentlig(true);
+                    setPrice(price - 5000);
                   } else {
                     setOffentlig(false);
+                    setPrice(price + 5000);
                   }
                 }}>
                 <option value="Nei">Nei</option>
@@ -242,87 +245,28 @@ export default function Home() {
               Del 4 - Valg av grunnpakke
             </h2>
             <hr className="mb-4 max-w-2xl" />
-            <label htmlFor="Dato" className="font-bold">
-              Dato for deltakelse*
-            </label>
-            <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
-              <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
-              <p className="ml-8 -mt-6">
-                Karrieredagene for 2023 skal arrangeres 14. og 15. september
-                2023. Velg datoene du ønsker å delta på ved å velge et valg fra
-                listen.
-              </p>
 
-              <hr className="my-4" />
-              <select
-                className="border py-2 px-4 mb-5 mt-2  w-full focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
-                id="Dato"
-                required
-                onChange={(e) => {
-                  setStand("");
-
-                  if (e.target.value == "Begge dagene") {
-                    setBoth(true);
-                  } else {
-                    setBoth(false);
-                  }
-                }}>
-                <option value="" disabled selected hidden>
-                  Velg en dato
-                </option>
-                <option value="Bare 14. september">Bare 14. september</option>
-                <option value="Bare 15. september">Bare 15. september</option>
-                <option value="Begge dagene">Begge dagene</option>
-              </select>
-            </div>
             <label htmlFor="Stand" className="font-bold">
-              Velg standtype*
+              Grunnpakken*
             </label>
             <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
               <p className="ml-8 -mt-6">
-                Vi tilbyr to typer stander, en stor med målene 5m x 3m og en
-                vanlig med målene 3m x 3m. Alle standplasser inkluderer 1. bord,
-                2 stoler og en strømpadde med minst 3 uttak.
+                Grunnpakken er inkludert i prisen og inneholder standplass og
+                inneholder:
+                <ul className="list-disc pl-6">
+                  <li>
+                    Stand plass (inkl. 1 bord, 2 stoler og strømpadde med minst
+                    3 uttak)
+                  </li>
+                  <li>
+                    Lynpresentasjon av bedriften i 3 minutter (Valgfritt, og må
+                    velges under)
+                  </li>
+                  <li>Mulighet for lynintervju med studenter</li>
+                  <li>Standplass på 3 x 3 meter</li>
+                </ul>
               </p>
-
-              <hr className="my-4" />
-              <select
-                className="border py-2 px-4 mb-5 mt-2  w-full focus:outline-none focus:border-b-[#66023C] focus:bg-gray-200 focus:border-b-2"
-                id="Stand"
-                required
-                value={stand}
-                onChange={(e) => {
-                  setStand(e.target.value);
-                  if (!offentlig) {
-                    if (both && e.target.value == "Vanlig stand") {
-                      setStandprice(10000);
-                    } else if (both && e.target.value == "Stor stand") {
-                      setStandprice(15000);
-                    } else if (e.target.value == "Vanlig stand") {
-                      setStandprice(7000);
-                    } else if (e.target.value == "Stor stand") {
-                      setStandprice(10000);
-                    }
-                  }
-                  if (offentlig) {
-                    if (both && e.target.value == "Vanlig stand") {
-                      setStandprice(4000);
-                    } else if (both && e.target.value == "Stor stand") {
-                      setStandprice(15000);
-                    } else if (e.target.value == "Vanlig stand") {
-                      setStandprice(3000);
-                    } else if (e.target.value == "Stor stand") {
-                      setStandprice(10000);
-                    }
-                  }
-                }}>
-                <option value="" disabled selected hidden>
-                  Velg en standtype
-                </option>
-                <option value="Vanlig stand">Vanlig stand (3m x 3m)</option>
-                <option value="Stor stand">Stor stand (5m x 3m)</option>
-              </select>
             </div>
 
             <h2 className="text-xl font-semibold mb-4">
@@ -383,7 +327,7 @@ export default function Home() {
                 plass. Dere er selv ansvarlige for å promotere deres
                 presentasjon, men dere vil få mulighet til å benytte dere av
                 våre kanaler dersom dere ønsker. Ta kontakt på mail
-                kontakt@echokarriere.no for å avtale.
+                kontakt@itxbergen.no for å avtale.
               </p>
 
               <hr className="my-4" />
@@ -424,7 +368,7 @@ export default function Home() {
                 slipper vi inn de som ønsker, så lenge det er ledig plass. Dere
                 er selv ansvarlige for å promotere deres workshop, men dere vil
                 få mulighet til å benytte dere av våre kanaler dersom dere
-                ønsker. Ta kontakt på mail kontakt@echokarriere.no for å avtale.
+                ønsker. Ta kontakt på mail kontakt@itxbergen.no for å avtale.
               </p>
 
               <hr className="my-4" />
@@ -449,33 +393,21 @@ export default function Home() {
               </label>
             </div>
             <label htmlFor="Bankett" className="font-bold">
-              {!offentlig ? (
-                <p>Bankett (+12 000 NOK)</p>
-              ) : (
-                <p>Bankett (+14 500 NOK)</p>
-              )}
+              <p>Interesse for bankett</p>
             </label>
             <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <p>
                 <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
-
-                {!offentlig ? (
-                  <p className="ml-8 -mt-6">
-                    Avholdes på Scandic Bergen City fredag 15. september etter
-                    karrieredagene. Inkluderer ett rundt bord med plass til 10
-                    personer, 3-retters middag, 2 enheter til maten og
-                    velkomstdrink. Prisen er den samme uansett om dere stiller
-                    med færre enn 10 personer.
-                  </p>
-                ) : (
-                  <p className="ml-8 -mt-6">
-                    Avholdes på Scandic Bergen City fredag 15. september etter
-                    karrieredagene. Inkluderer ett rundt bord med plass til 10
-                    personer, 3-retters middag, 2 enheter til maten, 2 bonger
-                    hver og velkomstdrink. Prisen er den samme uansett om dere
-                    stiller med færre enn 10 personer.
-                  </p>
-                )}
+                <p className="ml-8 -mt-6">
+                  Banketten vil avholdes den 19. september et sted i Bergen
+                  Sentrum. Pakken inneholder ett rundt bord med 10 plasser,
+                  inkl. 3-retters middag, 4 enheter hver og velkomstdrink.
+                  Veiledende pris for denne pakken vil ligge mellom 16 000 NOK
+                  og 20 000 NOK. Dette vil bli fakturert i tilegg til beløpet
+                  som er oppgitt nederst i dette skjemaet. Dette vil være
+                  bindende etter vi har mottatt en endelig bekreftelse fra
+                  bedriften at dere ønsker å delta på banketten.
+                </p>
               </p>
               <hr className="my-4" />
               <input
@@ -485,27 +417,15 @@ export default function Home() {
                 value={bankett ? "Ja" : "Nei"}
                 className="h-5 w-5 accent-[#66023C]"
                 onChange={() => {
-                  if (offentlig) {
-                    if (bankett) {
-                      setBankett(false);
-                      setPrice(price - 14500);
-                    } else {
-                      setBankett(true);
-                      setPrice(price + 14500);
-                    }
+                  if (bankett) {
+                    setBankett(false);
                   } else {
-                    if (bankett) {
-                      setBankett(false);
-                      setPrice(price - 12000);
-                    } else {
-                      setBankett(true);
-                      setPrice(price + 12000);
-                    }
+                    setBankett(true);
                   }
                 }}
               />
               <label htmlFor="Bankett" className="ml-2 text-md -mt-4">
-                Legg til bankett
+                Vi ønsker å vise interesse for å delta på bankett.
               </label>
             </div>
             <label htmlFor="Leveranse" className="font-bold">
@@ -518,7 +438,9 @@ export default function Home() {
                   Ønsker dere å få stand sendt og levert til oss? Ved å velge
                   dette godtar dere at vi videresender faktura informasjon til
                   en tredjepart som er ansvarlig for frakt og lagring, som vil
-                  sende dere et tilbud.
+                  sende dere et tilbud. Om dere ikke velger dette alternativet,
+                  har dere selv ansvar for å få sende og hente utstyr til og fra
+                  arrangementet.
                 </p>
               </p>
               <hr className="my-4" />
@@ -537,7 +459,7 @@ export default function Home() {
                 }}
               />
               <label htmlFor="Leveranse" className="ml-2 text-md -mt-4">
-                Ja, jeg ønsker å få stand sendt og levert til dere
+                Ja, vi ønsker å få stand sendt og levert til dere
               </label>
             </div>
             <h2 className="text-xl font-semibold">Del 6 - Annet</h2>
@@ -560,25 +482,17 @@ export default function Home() {
               <p>
                 <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
                 <p className="ml-8 -mt-6">
-                  Ettersom det er begrenset antall plasser, vil vi praktisere
-                  bindende påmelding. Dersom betalingsfristen ikke overholdes,
-                  vil deres plass på arrangementet automatisk falle bort. Dersom
-                  dere ikke møter, eller avbestiller etter at påmelding og
-                  betaling har skjedd, vil ikke innbetalt forskudd refunderes.
-                  Det samme gjelder dersom dere ikke overholder obligatoriske
-                  frister for tilbakemelding. Vi er avhengig av at bedriftene
-                  overholder sin del, slik at vi sammen får til et velfungerende
-                  arrangement.
+                  Vi har lest gjennom vilkårene som står skrevet i avtale- og
+                  påmeldingsvilkårene. Vi aksepterer disse vilkårene og
+                  forplikter oss til å følge disse. <br />
                   <br />
-                  <br />
-                  Du bekrefter at du også har lest gjennom vilkårene våre i
                   <a
-                    href="https://old.echokarriere.no/files/invitation.pdf"
+                    href="https://itxbergen.no/files/kontrakt.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-500">
                     {" "}
-                    invitasjonen
+                    Åpne avtale- og påmeldingsvilkårene i ny fane
                   </a>
                 </p>
               </p>
@@ -609,7 +523,7 @@ export default function Home() {
           <p>
             Deres pris:{" "}
             <span className="font-bold">
-              {(standprice + price).toLocaleString("no-NO", {
+              {(8500 + price).toLocaleString("no-NO", {
                 style: "currency",
                 currency: "NOK",
               })}
@@ -621,91 +535,9 @@ export default function Home() {
           <br /> <br />
           <button
             type="submit"
-            className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4"
-            // Show an success message on form submition
-            onClick={() => {
-              if (
-                Bedrift.value !== "" &&
-                Organisasjonsnummer.value !== "" &&
-                Kontaktperson.value !== "" &&
-                Epost.value.includes("@") &&
-                Epost.value.includes(".") &&
-                Telefonnummer.value !== "" &&
-                Fakturamail.value !== "" &&
-                Fakturaperson.value !== "" &&
-                Fakturaadresse.value !== "" &&
-                Fakturainfo.value !== "" &&
-                Dato.value !== "" &&
-                Stand.value !== "" &&
-                policy === true
-              )
-                setSuccess(true);
-            }}>
+            className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4">
             Send påmeldingsskjemaet
           </button>
-          {success && (
-            // <div
-            //   className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 relative mt-4 max-w-2xl"
-            //   role="alert">
-            //   <strong className="font-bold">
-            //     Takk for påmeldingen {Kontaktperson.value}!
-            //   </strong>{" "}
-            //   <span className="block sm:inline">
-            //     <br /> Vi har mottatt din påmelding og du vil innen kort tid få
-            //     en bekreftelse sendt til eposten {Epost.value}. Om noe er feil i
-            //     e-posten, eller at du ikke har mottatt den innen 5 minutter, ta
-            //     kontakt med oss på{" "}
-            //     <a
-            //       href="mailto:kontakt@itxbergen.no"
-            //       className="text-blue-500">
-            //       kontakt@itxbergen.no
-            //     </a>
-            //   </span>
-            // </div>
-
-            <div className="fixed top-0 left-0 w-full h-full bg-black flex items-center justify-center">
-              <div className="bg-white p-8 rounded shadow-2xl">
-                <h2 className="text-2xl font-semibold mb-4">
-                  Takk for påmeldingen!
-                </h2>
-                <p>
-                  Vi har mottatt din påmelding og du vil innen kort tid få en
-                  bekreftelse sendt til eposten du oppga .<br /> Om noe er feil
-                  i e-posten, eller at du ikke har mottatt den innen 5 minutter,
-                  ta kontakt med oss på{" "}
-                  <a
-                    href="mailto:kontakt@itxbergen.no"
-                    className="text-blue-500">
-                    kontakt@itxbergen.no
-                  </a>
-                </p>
-                <br />
-                <p>
-                  <b>Andre ting vi tror du vil sjekke ut:</b>
-                </p>
-                <br />
-                <a
-                  className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4"
-                  href="https://ixb.no/">
-                  Gå til hjemmesiden vår
-                </a>
-                <br />
-                <br />
-                <a
-                  className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4"
-                  href="https://www.linkedin.com/company/itxbergen">
-                  Følg oss på LinkedIn
-                </a>
-                <br />
-                <br />
-                <a
-                  className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4"
-                  href="https://airtable.com/shrEXkOYcPiAG7cDP">
-                  Publiser stillingsannonse
-                </a>
-              </div>
-            </div>
-          )}
         </form>
       </>
     </div>

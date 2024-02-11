@@ -4,17 +4,15 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Logo from "../components/assets/logonew.png";
 
-const Styremedlem = dynamic(() => import("../components/styremedlem"), {
-  ssr: false,
-});
+const KD24 = dynamic(() => import("../components/KD24"), { ssr: false });
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Bli styremedlem</title>
+        <title>Påmelding til karrieredagene for IT Studente i Bergen</title>
         <meta
           name="description"
-          content="Skjema for å melde deg på som styremedlem i ITxBERGEN"
+          content="Påmeldingsskjemaet for å melde bedriften din på echo karriere sine karrieredager 2023"
         />
         <meta name="theme-color" content="#66023C" />
         <link rel="icon" href="/favicon.ico" />
@@ -23,11 +21,7 @@ export default function Home() {
       <main className={styles.main}>
         <Image src={Logo} alt="echo karriere logo" width={300} height={300} />
         <br />
-        <div className="w-11/12">
-          <div className="w-full max-w-lg mx-auto">
-            <Styremedlem />
-          </div>
-        </div>
+        <KD24 />
       </main>
     </div>
   );
