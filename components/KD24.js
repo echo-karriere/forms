@@ -2,6 +2,17 @@ import Airtable from "airtable";
 import { useRef, useState } from "react";
 import "remixicon/fonts/remixicon.css";
 
+const LoadingOverlay = () => {
+  return (
+    <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+      <div className="p-5 bg-white rounded-lg">
+        Vennligst vent...
+        <br /> Ikke lukk vinduet mens vi sender påmeldingsskjemaet.
+      </div>
+    </div>
+  );
+};
+
 export default function Home() {
   const formRef = useRef();
   const [offentlig, setOffentlig] = useState(false);
@@ -12,10 +23,11 @@ export default function Home() {
   const [bankett, setBankett] = useState(false);
   const [leveranse, setLeveranse] = useState(false);
   const [policy, setPolicy] = useState(false);
+  const [success, setSucess] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
-
+    setSucess(true);
     const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
       process.env.AIRTABLE_BASE_ID
     );
@@ -67,6 +79,7 @@ export default function Home() {
           return;
         }
         console.log(record.getId());
+        setSucess(true);
         formRef.current.reset();
         window.location.href = "https://success.ixb.no";
       }
@@ -545,12 +558,22 @@ export default function Home() {
           </p>
           <small>Prisen er oppgitt eks. mva. med forbehold om feil.</small>
           <br /> <br />
+          {success && (
+            <p className="text-black font-bold">
+              Sender påmeldingsskjemaet, vennligst vent...
+              <br />
+              <br />
+            </p>
+          )}
+          {!success &&
           <button
             type="submit"
             className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4">
             Send påmeldingsskjemaet
           </button>
+          }
         </form>
+        {success && <LoadingOverlay />}
       </>
     </div>
   );
