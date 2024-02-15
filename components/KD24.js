@@ -378,7 +378,7 @@ export default function Home() {
               </label>
             </div>
             <label htmlFor="Workshop" className="font-bold">
-              Workshop (+ 4 000 NOK)
+              Workshop (+ 4 000 NOK) - Fullt
             </label>
             <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
@@ -392,6 +392,12 @@ export default function Home() {
                 er selv ansvarlige for å promotere deres workshop, men dere vil
                 få mulighet til å benytte dere av våre kanaler dersom dere
                 ønsker. Ta kontakt på mail kontakt@itxbergen.no for å avtale.
+                <br /> <br />
+                <b>
+                  Workshop er fullt, meld bedriften på venteliste. NB! Dette er
+                  ikke bindende før en eventuell plass er tilbudt og dere har
+                  takket ja til denne.
+                </b>
               </p>
 
               <hr className="my-4" />
@@ -565,13 +571,13 @@ export default function Home() {
               <br />
             </p>
           )}
-          {!success &&
-          <button
-            type="submit"
-            className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4">
-            Send påmeldingsskjemaet
-          </button>
-          }
+          {!success && (
+            <button
+              type="submit"
+              className="bg-[#33030d] hover:bg-fuchsia-900 text-white py-2 px-4">
+              Send påmeldingsskjemaet
+            </button>
+          )}
         </form>
         {success && <LoadingOverlay />}
       </>
