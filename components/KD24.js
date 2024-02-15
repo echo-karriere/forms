@@ -378,7 +378,7 @@ export default function Home() {
               </label>
             </div>
             <label htmlFor="Workshop" className="font-bold">
-              Workshop (+ 4 000 NOK) - Fullt
+              Workshop - Venteliste
             </label>
             <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
@@ -396,7 +396,7 @@ export default function Home() {
                 <b>
                   Workshop er fullt, meld bedriften på venteliste. NB! Dette er
                   ikke bindende før en eventuell plass er tilbudt og dere har
-                  takket ja til denne.
+                  takket ja til denne. Prisen for workshop er 4000 NOK.
                 </b>
               </p>
 
@@ -405,20 +405,20 @@ export default function Home() {
                 type="checkbox"
                 id="Workshop"
                 name="Workshop"
-                value={workshop ? "Ja" : "Nei"}
+                value={workshop ? "Venteliste" : "Nei"}
                 className="h-5 w-5 accent-[#66023C]"
                 onChange={() => {
                   if (workshop) {
                     setWorkshop(false);
-                    setPrice(price - 4000);
+                    // setPrice(price - 4000);
                   } else {
                     setWorkshop(true);
-                    setPrice(price + 4000);
+                    // setPrice(price + 4000);
                   }
                 }}
               />
               <label htmlFor="Workshop" className="ml-2 text-md -mt-4">
-                Legg til workshop
+                Legg til workshop (venteliste)
               </label>
             </div>
             <label htmlFor="Bankett" className="font-bold">
