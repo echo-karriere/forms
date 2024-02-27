@@ -351,6 +351,13 @@ export default function Home() {
                 presentasjon, men dere vil få mulighet til å benytte dere av
                 våre kanaler dersom dere ønsker. Ta kontakt på mail
                 kontakt@itxbergen.no for å avtale.
+                <br /> <br />
+                <b>
+                  Konseptpresentasjon er fullt, meld bedriften på venteliste.
+                  NB! Dette er ikke bindende før en eventuell plass er tilbudt
+                  og dere har takket ja til denne. Prisen for
+                  konseptpresentasjon er 2000 NOK.
+                </b>
               </p>
 
               <hr className="my-4" />
@@ -359,22 +366,22 @@ export default function Home() {
                 id="Konseptpresentasjon"
                 name="Konseptpresentasjon"
                 // value send Ja if checked, otherwise send Nei
-                value={konseptpresentasjon ? "Ja" : "Nei"}
+                value={konseptpresentasjon ? "Venteliste" : "Nei"}
                 className="h-5 w-5 accent-[#66023C]"
                 onChange={() => {
                   if (konseptpresentasjon) {
                     setKonseptpresentasjon(false);
-                    setPrice(price - 2000);
+                    // setPrice(price - 2000);
                   } else {
                     setKonseptpresentasjon(true);
-                    setPrice(price + 2000);
+                    // setPrice(price + 2000);
                   }
                 }}
               />
               <label
                 htmlFor="Konseptpresentasjon"
                 className="ml-2 text-md -mt-4">
-                Legg til konseptpresentasjon
+                Legg til konseptpresentasjon (venteliste)
               </label>
             </div>
             <label htmlFor="Workshop" className="font-bold">
