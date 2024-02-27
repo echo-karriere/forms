@@ -335,7 +335,7 @@ export default function Home() {
               </label>
             </div>
             <label htmlFor="Konseptpresentasjon" className="font-bold">
-              Konseptpresentasjon (+ 2 000 NOK)
+              Konseptpresentasjon - venteliste
             </label>
             <div className="border border-gray-300 -md p-4 -pb-2 mt-2 mb-6">
               <i className="ri-information-fill text-lg mt-12 mr-2 "></i>
