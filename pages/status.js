@@ -20,7 +20,7 @@ export default function Status() {
         }).base(process.env.AIRTABLE_BASE_ID);
 
         const records = await new Promise((resolve, reject) => {
-          base("event-ek2024")
+          base("info")
             .select({
               view: "Grid view",
             })
